@@ -14,8 +14,17 @@ public class ListUtils {
         return count;
     }
 
-//    b. Método que retorna true se l tem elementos repetidos
-//    boolean hasRepeat(ArrayList< Integer > l)
+    // b. Método que retorna true se l tem elementos repetidos
+    public boolean hasRepeat(ArrayList<Integer> l) {
+        for (int i = 0; i < l.size(); i++) {
+            for (int j = i + 1; j < l.size(); j++) {
+                if (l.get(i).equals(l.get(j))) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 //
 //    c. Método que retorna o número de elementos repetidos em l
 //    int nroRepeat(ArrayList< Integer > l)
@@ -32,10 +41,18 @@ public class ListUtils {
         }
         return retorno;
     }
-//
-//    e. Método que retorna a união de l1 e l2
-//    ArrayList<Integer> union(ArrayList<Integer> l1, ArrayList<Integer> l2)
-//
+
+    // e. Método que retorna a união de l1 e l2
+    public ArrayList<Integer> union(ArrayList<Integer> l1, ArrayList<Integer> l2) {
+        ArrayList<Integer> unionList = new ArrayList<>(l1);
+        for (Integer num : l2) {
+            if (!unionList.contains(num)) {
+                unionList.add(num);
+            }
+        }
+        return unionList;
+    }
+
 //    f. Método que retorna a intersecção de l1 e l2
 //    ArrayList<Integer> intersect(ArrayList<Integer> l1, ArrayList<Integer> l2)
 }
